@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prabhu Chennimalai K D - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* A LOT OF STYLING IS THE SAME */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #8b5cf6;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #8b5cf6;
+        }
+        
+        .btn-download-resume {
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-download-resume:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #cbd5e1;
+            max-width: 600px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .photo-placeholder {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            animation: fadeInUp 1s ease 0.1s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .photo-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            right: 3px;
+            bottom: 3px;
+            background: #1a1a2e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #8b5cf6;
+            border: 2px solid #8b5cf6;
+        }
+
+        .btn-secondary:hover {
+            background: #8b5cf6;
+            color: white;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(139, 92, 246, 0.1);
+            border: 2px solid #8b5cf6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8b5cf6;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #8b5cf6;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .social-links a i {
+            font-size: 1.5rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .about h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #8b5cf6;
+        }
+
+        .about-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            font-size: 1.1rem;
+            color: #cbd5e1;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: #8b5cf6;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+        }
+
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .skill-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #8b5cf6;
+        }
+
+        .skill-category p {
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        /* Journey Section */
+        .journey {
+            padding: 100px 0;
+        }
+
+        .journey h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #8b5cf6;
+        }
+
+        .journey-content {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .journey-content p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            line-height: 1.8;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .skills h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #8b5cf6;
+        }
+
+        .skills-subtitle {
+            text-align: center;
+            color: #cbd5e1;
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 10px;
+            padding: 1.5rem 1rem;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            background: rgba(139, 92, 246, 0.2);
+        }
+
+        .skill-icon-large {
+            font-size: 3rem;
+            color: #8b5cf6;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-name {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 100px 0;
+        }
+
+        .projects h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #8b5cf6;
+        }
+
+        .projects-subtitle {
+            text-align: center;
+            color: #cbd5e1;
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #8b5cf6;
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.2);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .project-header h3 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin: 0;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .project-link {
+            padding: 6px 12px;
+            background: rgba(139, 92, 246, 0.2);
+            color: #8b5cf6;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: #8b5cf6;
+            color: white;
+        }
+
+        .project-description {
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            padding: 4px 8px;
+            background: rgba(139, 92, 246, 0.2);
+            color: #8b5cf6;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+        .contact {
+            padding: 100px 0;
+        }
+
+        .contact h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #8b5cf6;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-form {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+        }
+
+        .contact-form h3 {
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #cbd5e1;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: #1a1a2e;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 2rem;
+            color: #ffffff;
+        }
+
+        .contact-info p {
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 10px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .contact-icon i {
+            font-size: 1.2rem;
+        }
+
+        .contact-text h4 {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-text p {
+            color: #8b5cf6;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .social-section {
+            margin-top: 2rem;
+        }
+
+        .social-section h4 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .social-section p {
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-btn {
+            padding: 8px 16px;
+            background: #1a1a2e;
+            color: #cbd5e1;
+            text-decoration: none;
+            border-radius: 8px;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: #8b5cf6;
+            color: white;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            nav .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+        }
+        .contact-form {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .form-message.success {
+            background-color: rgba(74, 222, 128, 0.2);
+            color: #4ade80;
+            border: 1px solid #4ade80;
+        }
+
+        .form-message.error {
+            background-color: rgba(248, 113, 113, 0.2);
+            color: #f87171;
+            border: 1px solid #f87171;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: #1a1a2e;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Loading spinner */
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">Prabhu Chennimalai K D</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="prabhu_resume.pdf" download="Prabhu_resume.pdf" class="btn-download-resume">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+    <br><br><br>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="photo-placeholder">
+                <img src="Profile.jpg" alt="Prabhu Chennimalai K D">
+            </div>
+            <h1>Prabhu Chennimalai K D</h1>
+            <p>Aspiring AI/ML professional seeking internship opportunities to apply programming, data analysis, and problem-solving skills in real-world projects. Enthusiastic about contributing to innovative tech solutions and gaining hands-on experience in software development and machine learning.</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/Prabhu38012" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/prabhu-chennimalai-kd" title="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:prabhuchennimalaikd@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>I'm an aspiring AI/ML Engineer pursuing BTech in Artificial Intelligence and Machine Learning at Kongu Engineering College. I've gained hands-on experience through projects like building event booking systems, developing machine learning models for restaurant rating predictions, and creating learning path dashboards. I'm enthusiastic about contributing to innovative tech solutions and gaining real-world experience in software development and machine learning.</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <h3>Programming</h3>
+                    <p>Proficient in Java, Python, JavaScript, and C/C++ for diverse development needs.</p>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Machine Learning</h3>
+                    <p>Experience with TensorFlow, Scikit-learn, Pandas, and PyTorch for ML projects.</p>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>MERN Stack expertise with React, Node.js, Express, and MongoDB development.</p>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Data Analysis</h3>
+                    <p>Strong foundation in data preprocessing, feature engineering, and predictive modeling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="journey">
+        <div class="container">
+            <h2>My Journey</h2>
+            <div class="journey-content">
+                <p>Currently pursuing my Bachelor's in AI/ML at Kongu Engineering College with a CGPA of 7.80. I've gained hands-on experience through projects like building event booking systems, developing machine learning models for restaurant rating predictions, and creating learning path dashboards. I'm enthusiastic about contributing to innovative tech solutions and gaining real-world experience in software development and machine learning.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Skills & Expertise</h2>
+            <p class="skills-subtitle">Technologies and tools I use to bring ideas to life.</p>
+            <div class="skills-container">
+                <div class="skill-item">
+                    <i class="fab fa-java skill-icon-large"></i>
+                    <span class="skill-name">Java</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-python skill-icon-large"></i>
+                    <span class="skill-name">Python</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-js skill-icon-large"></i>
+                    <span class="skill-name">JavaScript</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-react skill-icon-large"></i>
+                    <span class="skill-name">React</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-node-js skill-icon-large"></i>
+                    <span class="skill-name">Node.js</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-database skill-icon-large"></i>
+                    <span class="skill-name">MongoDB</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-brain skill-icon-large"></i>
+                    <span class="skill-name">Machine Learning</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-microchip skill-icon-large"></i>
+                    <span class="skill-name">Deep Learning</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-chart-bar skill-icon-large"></i>
+                    <span class="skill-name">PowerBI</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-c skill-icon-large"></i>
+                    <span class="skill-name">C Language</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-git-alt skill-icon-large"></i>
+                    <span class="skill-name">Git</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-linux skill-icon-large"></i>
+                    <span class="skill-name">Linux</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <p class="projects-subtitle">A collection of projects that showcase my skills and passion for creating exceptional digital experiences.</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Event Booking System</h3>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="https://github.com/Prabhu38012/Event-Booking-System" class="project-link" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <p class="project-description">A full-stack event booking platform built with MERN Stack featuring JWT authentication, protected routes, event management with CRUD operations, multi-step booking, and automated email confirmations via Nodemailer.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">JWT</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Restaurant Rating ML Project</h3>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="https://github.com/Prabhu38012/Restaurant-Rating-ML" class="project-link" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <p class="project-description">A machine learning model to analyze restaurant datasets and predict consumer ratings based on reviews and features. Implemented data preprocessing, feature engineering, and supervised learning algorithms to improve rating prediction accuracy and business insights.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Data Analysis</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Learning Path Dashboard</h3>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="https://github.com/Prabhu38012/Learning-Path-Dashboard" class="project-link" target="_blank">Code</a>
+                        </div>
+                    </div>
+                    <p class="project-description">An interactive dashboard for tracking learning progress and managing educational resources. Features include progress visualization, resource management, goal setting, and personalized learning recommendations with a clean, intuitive user interface.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Data Visualization</span>
+                        <span class="tech-tag">UI/UX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Let's Work Together</h2>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form action="https://formspree.io/f/xdkdlaol" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="_replyto" name="_replyto" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <span>Send Message</span>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>I'm always open to discussing new opportunities, creative projects, or potential collaborations. Don't hesitate to reach out!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>prabhuchennimalaikd@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+91 638-089-9390</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>Erode, Tamil Nadu, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-section">
+                        <h4>Let's Connect</h4>
+                        <p>Follow me on social media for updates on my latest projects and insights.</p>
+                        <div class="social-buttons">
+                            <a href="https://github.com/Prabhu38012" class="social-btn" target="_blank">GitHub</a>
+                            <a href="https://linkedin.com/in/prabhu-chennimalai-kd" class="social-btn" target="_blank">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
